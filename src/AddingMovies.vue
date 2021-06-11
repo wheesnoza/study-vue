@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <input v-model="movie.title" type="text" placeholder="Write something" class="form-control">
-    <input v-model="movie.year" type="text" placeholder="Write something" class="form-control">
+    <input v-model="movie.title" type="text" placeholder="Movie title" class="form-control">
+    <input v-model="movie.year" type="text" placeholder="Movie year" class="form-control">
     <button v-on:click="add(movie)" type="button" class="btn btn-primary">Add</button>
     <div class="container">
       <div class="row">
