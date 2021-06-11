@@ -5,8 +5,9 @@
     <button v-on:click="add(movie)" type="button" class="btn btn-primary">Add</button>
     <div class="container">
       <div class="row">
-        <div v-for="movie in movies" :key="movie.id" class="col">
+        <div v-for="(movie, index) in movies" :key="index" class="col">
           <Card :title="movie.title" :text="movie.year" btn="Go to movie"></Card>
+          <button v-on:click="remove(index)" type="button" class="btn btn-danger">Remove</button>
         </div>
       </div>
     </div>
@@ -32,8 +33,10 @@ export default {
   },
   methods: {
     add(movie) {
-      console.log(movie);
       this.movies.push(movie);
+    },
+    remove(index) {
+      this.movies.splice(index, 1);
     }
   }
 }
